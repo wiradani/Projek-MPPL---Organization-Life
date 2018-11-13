@@ -17,7 +17,11 @@ class CreateDivisionsTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->text('deskripsi');
+            $table->integer('cabinet_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('cabinet_id')->references('id')->on('cabinets')->onDelete('cascade');
+            
         });
     }
 

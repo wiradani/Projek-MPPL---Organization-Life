@@ -18,7 +18,10 @@ class CreateContactsTable extends Migration
             $table->string('LineID', 100);
             $table->string('Handphone', 100);
             $table->text('alamat');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

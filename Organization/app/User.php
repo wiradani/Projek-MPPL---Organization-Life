@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Reward::class);
     }
+
+    public function Contact()
+    {
+        return $this->hasOne('App\Contact');
+    }
 }

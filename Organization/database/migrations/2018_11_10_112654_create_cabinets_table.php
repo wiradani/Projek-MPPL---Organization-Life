@@ -17,6 +17,7 @@ class CreateCabinetsTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->text('deskripsi');
+            $table->text('periode');
             $table->timestamps();
         });
     }
