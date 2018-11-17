@@ -12,15 +12,21 @@ $ organization
 ```
 $ cd organization
 ```
-2. migrate the database
+2. install composer to folder backend
+```
+$ composer install
+```
+3. setup .env file
+
+4. migrate the database
 ```
 $ php artisan migrate
 ```
-3. run the laravel
+5. run the laravel
 ```
 $ php artisan serve
 ```
-4. open this url in your browser
+6. open this url in your browser
 ```
 $ http://127.0.0.1:8000/
 ```
