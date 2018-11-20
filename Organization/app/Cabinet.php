@@ -8,7 +8,7 @@ class Cabinet extends Model
 {
 
     protected $fillable = [
-        'nama', 'deskripsi', 'periode',
+        'id','nama', 'deskripsi', 'periode','created_at','updated_at'
     ];
 
     public function organizations()

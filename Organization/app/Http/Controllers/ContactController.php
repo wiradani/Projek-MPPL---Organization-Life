@@ -11,30 +11,30 @@ class ContactController extends Controller
     {
         return Contact::all();
     }
-
-    public function show(Contact $contact)
+ 
+    public function show($id)
     {
-        return $contact;
+        return Contact::find($id);
     }
 
     public function store(Request $request)
     {
-        $contact = Contact::create($request->all());
-
-        return response()->json($contact, 201);
+        return Cabinet::create($request->all());
     }
 
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, $id)
     {
+        $contact = Contact::findOrFail($id);
         $contact->update($request->all());
 
-        return response()->json($contact, 200);
+        return $contact;
     }
 
-    public function delete(Contact $contact)
+    public function delete(Request $request, $id)
     {
+        $contact = Contact::findOrFail($id);
         $contact->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }

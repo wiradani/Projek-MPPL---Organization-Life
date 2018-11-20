@@ -12,30 +12,30 @@ class RewardController extends Controller
     {
         return Reward::all();
     }
-
-    public function show(Reward $reward)
+ 
+    public function show($id)
     {
-        return $reward;
+        return Reward::find($id);
     }
 
     public function store(Request $request)
     {
-        $Reward = Reward::create($request->all());
-
-        return response()->json($reward, 201);
+        return Reward::create($request->all());
     }
 
-    public function update(Request $request, Reward $reward)
+    public function update(Request $request, $id)
     {
+        $reward = Reward::findOrFail($id);
         $reward->update($request->all());
 
-        return response()->json($reward, 200);
+        return $reward;
     }
 
-    public function delete(Reward $reward)
+    public function delete(Request $request, $id)
     {
+        $reward = Reward::findOrFail($id);
         $reward->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }
