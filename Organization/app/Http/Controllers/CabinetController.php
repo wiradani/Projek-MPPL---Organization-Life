@@ -11,30 +11,30 @@ class CabinetController extends Controller
     {
         return Cabinet::all();
     }
-
-    public function show(Cabinet $cabinet)
+ 
+    public function show($id)
     {
-        return $cabinet;
+        return Cabinet::find($id);
     }
 
     public function store(Request $request)
     {
-        $cabinet = Cabinet::create($request->all());
-
-        return response()->json($cabinet, 201);
+        return Cabinet::create($request->all());
     }
 
-    public function update(Request $request, Cabinet $cabinet)
+    public function update(Request $request, $id)
     {
+        $cabinet = Cabinet::findOrFail($id);
         $cabinet->update($request->all());
 
-        return response()->json($cabinet, 200);
+        return $cabinet;
     }
 
-    public function delete(Cabinet $cabinet)
+    public function delete(Request $request, $id)
     {
+        $cabinet = Cabinet::findOrFail($id);
         $cabinet->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }

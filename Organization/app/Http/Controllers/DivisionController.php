@@ -11,30 +11,30 @@ class DivisionController extends Controller
     {
         return Division::all();
     }
-
-    public function show(Division $division)
+ 
+    public function show($id)
     {
-        return $division;
+        return Division::find($id);
     }
 
     public function store(Request $request)
     {
-        $division = Division::create($request->all());
-
-        return response()->json($Division, 201);
+        return Division::create($request->all());
     }
 
-    public function update(Request $request, Division $division)
+    public function update(Request $request, $id)
     {
+        $division = Division::findOrFail($id);
         $division->update($request->all());
 
-        return response()->json($division, 200);
+        return $division;
     }
 
-    public function delete(Event $division)
+    public function delete(Request $request, $id)
     {
+        $division = Division::findOrFail($id);
         $division->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }

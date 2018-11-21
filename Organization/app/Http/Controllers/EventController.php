@@ -11,30 +11,30 @@ class EventController extends Controller
     {
         return Event::all();
     }
-
-    public function show(Event $event)
+ 
+    public function show($id)
     {
-        return $event;
+        return Event::find($id);
     }
 
     public function store(Request $request)
     {
-        $event = Event::create($request->all());
-
-        return response()->json($Event, 201);
+        return Event::create($request->all());
     }
 
-    public function update(Request $request, Event $event)
+    public function update(Request $request, $id)
     {
+        $event = Event::findOrFail($id);
         $event->update($request->all());
 
-        return response()->json($event, 200);
+        return $event;
     }
 
-    public function delete(Event $event)
+    public function delete(Request $request, $id)
     {
+        $event = Event::findOrFail($id);
         $event->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }

@@ -11,30 +11,31 @@ class OrganizationController extends Controller
     {
         return Organization::all();
     }
-
-    public function show(Organization $organization)
+ 
+    public function show($id)
     {
-        return $organization;
+        return Organization::find($id);
     }
 
     public function store(Request $request)
     {
-        $Organization = Organization::create($request->all());
-
-        return response()->json($organization, 201);
+        return Organization::create($request->all());
     }
 
-    public function update(Request $request, Organization $organization)
+    public function update(Request $request, $id)
     {
+        $organization = Organization::findOrFail($id);
         $organization->update($request->all());
 
-        return response()->json($organization, 200);
+        return $organization;
     }
 
-    public function delete(Organization $organization)
+    public function delete(Request $request, $id)
     {
+        $organization = Organization::findOrFail($id);
         $organization->delete();
 
-        return response()->json(null, 204);
+        return 204;
     }
 }
+
