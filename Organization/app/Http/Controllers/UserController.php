@@ -50,4 +50,25 @@ class UserController extends Controller
             ->get();
         return response()->json($user, 200);
     }
+
+    public function userGetCabinet(Request $request, $id){
+        $user = User::findOrFail($id);
+        $user = DB::table('users')->where('users.id',$id )
+            ->join('divisions', 'users.divisi_id', '=', 'divisions.id')
+            ->join('cabinets', 'divisions.cabinet_id', '=', 'cabinets.id')
+            ->select('users.id','cabinets.nama')
+            ->get();
+        return response()->json($user, 200);
+    }
+
+    public function userGetDivision(Request $request, $id){
+        $user = User::findOrFail($id);
+        $user = DB::table('users')->where('users.id',$id )
+            ->join('divisions', 'users.divisi_id', '=', 'divisions.id')
+            ->select('users.id','divisions.nama')
+            ->get();
+        return response()->json($user, 200);
+    }
+
+
 }
