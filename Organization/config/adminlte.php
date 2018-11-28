@@ -123,14 +123,20 @@ return [
         ],
         'ACCOUNT SETTINGS',
         [
-            'text' => 'Profile',
+            'text' => 'Events',
             'url'  => 'admin/settings',
-            'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'Statistic',
             'url'  => 'admin/settings',
-            'icon' => 'lock',
+        ],
+        [
+            'text' => 'Profile',
+            'url'  => 'admin/settings',
+        ],
+        [
+            'text' => 'Contact',
+            'url'  => 'admin/settings',
         ],
         [
             'text'    => 'Multilevel',
