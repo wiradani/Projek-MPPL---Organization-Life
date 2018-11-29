@@ -166,7 +166,12 @@ You can configure your menu as follows:
         'url' => 'admin/blog',
     ],
     [
-        'text' => 'Pages',
+        'text' => 'Tambah kabinet',
+        'url' => 'admin/pages',
+        'icon' => 'file'
+    ],
+    [
+        'text' => 'Tambah divisi',
         'url' => 'admin/pages',
         'icon' => 'file'
     ],
