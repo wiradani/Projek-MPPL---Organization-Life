@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e60d0d+0,dc5454+100 */
     background: #e60d0d; /* Old browsers */
@@ -15,11 +17,7 @@ body {
 main {
     background: #fff;
     padding: 1em 1.4em;
-    /* width: 100%;
-    height: 100%; */
-    /* box-shadow: 0 39px 35px rgba(0, 0, 0, 0.16); */
     padding: 4em;
-    /* background-size:  cover; */
     background-color: #ffffff;
 }
 
@@ -60,7 +58,7 @@ h1{
     margin: 0;
     padding: 0;
     font-size: 55px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: lighter;
     color: #707070;    
 }
@@ -69,7 +67,7 @@ h2{
     margin: 0;
     padding: 0;
     font-size: 23px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-weight: lighter;
     color: #707070;    
 }
@@ -107,7 +105,7 @@ h2{
     display: block;
     /* margin: 20px auto; */
     text-align: center;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     /* padding: 14px 40px; */
     outline: none;
     color: white;
@@ -125,7 +123,7 @@ h2{
     display: block;
     /* margin: 20px auto; */
     text-align: center;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     /* padding: 14px 40px; */
     color: #E60D0D;
     border-radius: 32px;
