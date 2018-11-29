@@ -1,4 +1,4 @@
-@extends('adminlte::master')
+{{-- @extends('adminlte::master')
 
 @section('adminlte_css')
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/iCheck/square/blue.css') }}">
@@ -83,4 +83,34 @@
         });
     </script>
     @yield('js')
-@stop
+@stop --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Sign UP</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <div class="formBox">
+                <h1>Sign UP</h1>
+                <h2>Welcome Back, Please login to your account</h2>
+                <form action="index.html" method="POST">
+                    <input type="text" name="" placeholder="Login">
+                    <input type="Password" name="" placeholder="Password">
+                    <div class="box">    
+                        <input type="submit" name="" value="Login">
+                        <input type="submit" name="" value="Sign up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

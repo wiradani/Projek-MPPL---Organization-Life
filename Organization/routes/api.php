@@ -59,3 +59,13 @@ Route::get('role/{id}', 'RoleController@show');
 Route::post('role', 'RoleController@store');
 Route::put('role/{id}', 'RoleController@update');
 Route::delete('role/{id}', 'RoleController@delete');
+
+Route::get('user', 'UserController@index');
+Route::get('user/{id}', 'UserController@show');
+Route::post('user', 'UserController@store');
+Route::put('user/{id}', 'UserController@update');
+Route::delete('user/{id}', 'UserController@delete');
+
+Route::get('userGetOrganisasi/{id}', 'UserController@userGetOrganisasi');
+Route::get('userGetKabinet/{id}', 'UserController@userGetCabinet');
+Route::get('userGetDivisi/{id}', 'UserController@userGetDivision');

@@ -7,7 +7,7 @@ create new blank database check .env file
 ```
 $ organization
 ```
-## 1. Installation Admin LTE
+### Installation Admin LTE
 
 1. Require the package using composer:
 
@@ -51,4 +51,8 @@ $ php artisan serve
 6. open this url in your browser
 ```
 $ http://127.0.0.1:8000/
+```
+7. View all api routes
+```
+$ php artisan route:list
 ```
