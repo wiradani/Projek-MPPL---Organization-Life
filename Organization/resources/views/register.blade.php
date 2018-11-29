@@ -16,8 +16,32 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
 
+                        <div class="form-group{{ $errors->has('organization_name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Nama Organisasi</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="organization_name" value="{{ old('organization_name') }}">
+
+                                @if ($errors->has('organization_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('organization_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Deskripsi Organisasi</label>
+                            <textarea class="col-md-40" name="description" value="{{ old('description') }}" required autofocus id="description" placeholder="Enter description"></textarea>
+                            @if ($errors->has('description'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Name</label>
+                            <label class="col-md-4 control-label">Nama</label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -31,7 +55,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label class="col-md-4 control-label">Alamat E-Mail</label>
 
                             <div class="col-md-6">
                                 <input type="email" class="form-control" name="email" value="{{ old('email') }}">
