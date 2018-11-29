@@ -12,6 +12,7 @@
 */
 Route::auth();
 Route::resource('/', 'WelcomeController');
+Route::resource('/kabinet', 'ListKabinet');
 Route::get('/login', function () {
     return view('login');
 });
