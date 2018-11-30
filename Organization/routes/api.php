@@ -67,3 +67,4 @@ Route::put('user/{id}', 'UserController@update');
 Route::delete('user/{id}', 'UserController@delete');
 
 Route::get('userGetRole/{id}', 'UserController@userGetRole');
+Route::get('getKabinet/{id}', 'OrganizationController@getKabinet');

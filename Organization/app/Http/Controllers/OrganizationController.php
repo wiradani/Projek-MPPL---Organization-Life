@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Organization;
 
@@ -36,6 +37,16 @@ class OrganizationController extends Controller
         $organization->delete();
 
         return 204;
+    }
+
+    public function getKabinet(Request $request, $id){
+        Organization::findOrFail($id);
+        $organization = DB::table('organizations')
+        ->join('cabinet_organization', 'organizations.id_organization', '=', 'cabinet_organization.organization_id')
+            ->join('cabinets', 'cabinet_organization.cabinet_id', '=', 'cabinets.id_cabinet')
+            ->select('organizations.*', 'cabinets.*')
+            ->get();
+        return response()->json($organization, 200);
     }
 }
 

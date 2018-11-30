@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Organization extends Model
-{
+{   
+    protected $primaryKey = 'id_organization';
+    
     protected $fillable = [
-        'id', 'nama', 'deskripsi','created_at','updated_at'
+        'id_organization', 'nama_organization', 'deskripsi_organization','created_at','updated_at'
     ];
 
     public function Cabinet()

@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+    protected $primaryKey = 'id_contact';
+
     protected $fillable = [
-        'id','LineID','Handphone','alamat','user_id','created_at', 'updated_at'
+        'id_contact','LineID','Handphone','alamat','user_id','created_at', 'updated_at'
     ];
     
     public function user()
