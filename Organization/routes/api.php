@@ -68,3 +68,4 @@ Route::delete('user/{id}', 'UserController@delete');
 
 Route::get('userGetRole/{id}', 'UserController@userGetRole');
 Route::get('getKabinet/{id}', 'OrganizationController@getKabinet');
+Route::get('getDivisi/{id}', 'CabinetController@getDivisi');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cabinet;
-
+use DB;
 class CabinetController extends Controller
 {
     public function index()
@@ -36,5 +36,14 @@ class CabinetController extends Controller
         $cabinet->delete();
 
         return 204;
+    }
+
+    public function getDivisi(Request $request, $id){
+        Cabinet::findOrFail($id);
+        $cabinet = DB::table('cabinets')
+        ->join('divisions', 'cabinets.id_cabinet', '=', 'divisions.cabinet_id')
+            ->select('cabinets.*','divisions.*')
+            ->get();
+        return response()->json($cabinet, 200);
     }
 }
