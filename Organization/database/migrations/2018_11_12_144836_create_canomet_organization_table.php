@@ -18,8 +18,8 @@ class CreateCanometOrganizationTable extends Migration
             $table->integer('organization_id')->unsigned();
             $table->integer('cabinet_id')->unsigned();
 
-            $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('cascade');
-            $table->foreign('cabinet_id')->references('id')->on('cabinets')->onDelete('cascade');
+            $table->foreign('organization_id')->references('id_organization')->on('organizations')->onDelete('cascade');
+            $table->foreign('cabinet_id')->references('id_cabinet')->on('cabinets')->onDelete('cascade');
         });
     }
 

@@ -14,11 +14,11 @@ class CreateRewardsTable extends Migration
     public function up()
     {
         Schema::create('rewards', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama');
-            $table->text('deskripsi');
+            $table->increments('id_reward');
+            $table->string('nama_reward');
+            $table->text('deskripsi_reward');
             $table->smallInteger('points_reward');
-            $table->bigInteger('quantity');
+            $table->bigInteger('quantity_reward');
             $table->timestamps();
         });
     }

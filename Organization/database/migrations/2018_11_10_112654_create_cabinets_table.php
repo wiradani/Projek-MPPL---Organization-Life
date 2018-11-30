@@ -14,10 +14,10 @@ class CreateCabinetsTable extends Migration
     public function up()
     {
         Schema::create('cabinets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama');
-            $table->text('deskripsi');
-            $table->text('periode');
+            $table->increments('id_cabinet');
+            $table->string('nama_cabinet');
+            $table->text('deskripsi_cabinet');
+            $table->text('periode_cabinet');
             $table->timestamps();
         });
     }
