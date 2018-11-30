@@ -18,7 +18,7 @@ class CreateUserRewardTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('reward_id')->unsigned();
 
-            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('reward_id')->references('id_reward')->on('rewards')->onDelete('cascade');
         });
     }

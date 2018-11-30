@@ -39,33 +39,10 @@ class UserController extends Controller
         return 204;
     }
 
-    public function userGetOrganisasi(Request $request, $id){
-        $user = User::findOrFail($id);
-        $user = DB::table('users')->where('users.id',$id )
-            ->join('divisions', 'users.divisi_id', '=', 'divisions.id')
-            ->join('cabinets', 'divisions.cabinet_id', '=', 'cabinets.id')
-            ->join('cabinet_organization', 'cabinets.id', '=', 'cabinet_organization.cabinet_id')
-            ->join('organizations', 'cabinet_organization.cabinet_id', '=', 'organizations.id')
-            ->select('users.id','users.name','organizations.nama')
-            ->get();
-        return response()->json($user, 200);
-    }
-
-    public function userGetCabinet(Request $request, $id){
-        $user = User::findOrFail($id);
-        $user = DB::table('users')->where('users.id',$id )
-            ->join('divisions', 'users.divisi_id', '=', 'divisions.id')
-            ->join('cabinets', 'divisions.cabinet_id', '=', 'cabinets.id')
-            ->select('users.id','cabinets.nama')
-            ->get();
-        return response()->json($user, 200);
-    }
-
-    public function userGetDivision(Request $request, $id){
-        $user = User::findOrFail($id);
-        $user = DB::table('users')->where('users.id',$id )
-            ->join('divisions', 'users.divisi_id', '=', 'divisions.id')
-            ->select('users.id','divisions.nama')
+    public function userGetRole(Request $request){
+        $user = DB::table('users')
+            ->join('roles', 'users.role_id', '=', 'roles.id_role')
+            ->select('users.id','roles.*')
             ->get();
         return response()->json($user, 200);
     }
