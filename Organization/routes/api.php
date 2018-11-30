@@ -66,7 +66,4 @@ Route::post('user', 'UserController@store');
 Route::put('user/{id}', 'UserController@update');
 Route::delete('user/{id}', 'UserController@delete');
 
-Route::get('userGetOrganisasi/{id}', 'UserController@userGetOrganisasi');
-Route::get('userGetKabinet/{id}', 'UserController@userGetCabinet');
-Route::get('userGetDivisi/{id}', 'UserController@userGetDivision');
-Route::get('userGetRole', 'UserController@userGetRole');
+Route::get('userGetRole/{id}', 'UserController@userGetRole');

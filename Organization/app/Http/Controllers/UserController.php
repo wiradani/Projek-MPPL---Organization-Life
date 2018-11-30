@@ -39,7 +39,8 @@ class UserController extends Controller
         return 204;
     }
 
-    public function userGetRole(Request $request){
+    public function userGetRole(Request $request, $id){
+        $user = User::findOrFail($id);
         $user = DB::table('users')
             ->join('roles', 'users.role_id', '=', 'roles.id_role')
             ->select('users.id','roles.*')
