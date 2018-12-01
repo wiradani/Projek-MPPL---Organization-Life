@@ -42,7 +42,8 @@ class CabinetController extends Controller
         Cabinet::findOrFail($id);
         $cabinet = DB::table('cabinets')
         ->join('divisions', 'cabinets.id_cabinet', '=', 'divisions.cabinet_id')
-            ->select('cabinets.*','divisions.*')
+            ->select('cabinets.id_cabinet','cabinets.nama_cabinet'
+            ,'divisions.id_division','divisions.nama_division','divisions.deskripsi_division')
             ->get();
         return response()->json($cabinet, 200);
     }

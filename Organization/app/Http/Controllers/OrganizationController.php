@@ -44,7 +44,7 @@ class OrganizationController extends Controller
         $organization = DB::table('organizations')
         ->join('cabinet_organization', 'organizations.id_organization', '=', 'cabinet_organization.organization_id')
             ->join('cabinets', 'cabinet_organization.cabinet_id', '=', 'cabinets.id_cabinet')
-            ->select('organizations.*', 'cabinets.*')
+            ->select('organizations.id_organization','organizations.nama_organization', 'cabinets.id_cabinet','cabinets.nama_cabinet','cabinets.deskripsi_cabinet')
             ->get();
         return response()->json($organization, 200);
     }
