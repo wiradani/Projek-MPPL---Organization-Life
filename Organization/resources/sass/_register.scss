@@ -7,6 +7,7 @@ body {
     background: -webkit-linear-gradient(45deg, #e60d0d 0%,#dc5454 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, #e60d0d 0%,#dc5454 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60d0d', endColorstr='#dc5454',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    font-family: 'Montserrat';
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding: 0;
@@ -14,51 +15,26 @@ body {
     background-size: cover;
 }
 
-main {
+.formBox {
+    width: 45%;
+    padding: 50px 50px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-sizing: border-box;
     background: #fff;
-    padding: 1em 1.4em;
-    padding: 4em;
-    background-color: #ffffff;
-}
-
-.container {
-    /* Style for "Rectangle" */
-    width: 90%;
-    height: 545pt;
-    margin: 35px auto;
     border: 2px solid #fff;
     box-shadow: 0 39px 35px rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
-}
-
-.container .left {
-    float: left; 
-    width: 45%;
-    height: 545pt;
-    margin: auto auto auto 112px;
-    background: url(/images/logo.svg) no-repeat center;
-    box-sizing: border-box;
-}
-
-.container .right {
-    float: right; 
-    width: 45%;
-    height: 545pt;
-    box-sizing: border-box;
-}
-
-.formBox {
-    width: 100%;
-    padding: 178px 50px 178px 50px;
-    box-sizing: border-box;
-    background: #fff;
 }
 
 h1{
     margin: 0;
     padding: 0;
     font-size: 55px;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-weight: lighter;
     color: #707070;    
 }
@@ -67,7 +43,7 @@ h2{
     margin: 0;
     padding: 0;
     font-size: 23px;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-weight: lighter;
     color: #707070;    
 }
@@ -105,7 +81,7 @@ h2{
     display: block;
     /* margin: 20px auto; */
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     /* padding: 14px 40px; */
     outline: none;
     color: white;
@@ -123,7 +99,7 @@ h2{
     display: block;
     /* margin: 20px auto; */
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     /* padding: 14px 40px; */
     color: #E60D0D;
     border-radius: 32px;

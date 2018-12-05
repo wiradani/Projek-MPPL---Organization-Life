@@ -1,4 +1,4 @@
-@extends('adminlte::master')
+{{-- @extends('adminlte::master')
 
 @section('adminlte_css')
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}">
@@ -113,4 +113,33 @@
 
 @section('adminlte_js')
     @yield('js')
-@stop
+@stop --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="formBox">
+        <h1>Create Account</h1>
+        <h2>Create account below to start using Organization Life</h2>
+        <form action="index.html" method="POST">
+            <input type="text" name="" placeholder="Nama Organisasi">
+            <input type="text" name="" placeholder="Deskripsi Organisasi">
+            <input type="text" name="" placeholder="Nama">
+            <input type="text" name="" placeholder="Alamat E-mail">
+            <input type="Password" name="" placeholder="Password">
+            <input type="Password" name="" placeholder="Confirm Password">
+
+            <div class="submitBox">    
+                <input type="submit" name="" value="Register">
+            </div>
+        </form>
+    </div>    
+</body>
+</html>
