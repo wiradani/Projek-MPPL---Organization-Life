@@ -22,6 +22,20 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    public function login(Request $request)
+    {
+
+        $email_user = $request->all()['email'];
+        $password = $request->all()['password'];
+
+        if (Auth::attempt(['email_user' => $email_user, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended($this->redirectPath());
+        }
+
+        return $this->sendFailedLoginResponse($request);
+    }    
+
 
     /**
      * Where to redirect users after login.
