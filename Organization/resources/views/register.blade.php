@@ -16,53 +16,53 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
 
-                        <div class="form-group{{ $errors->has('organization_name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('nama_organization') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Nama Organisasi</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="organization_name" value="{{ old('organization_name') }}">
+                                <input type="text" class="form-control" name="nama_organization" value="{{ old('nama_organization') }}">
 
-                                @if ($errors->has('organization_name'))
+                                @if ($errors->has('nama_organization'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('organization_name') }}</strong>
+                                        <strong>{{ $errors->first('nama_organization') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('deskripsi_organization') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Deskripsi Organisasi</label>
-                            <textarea class="col-md-40" name="description" value="{{ old('description') }}" required autofocus id="description" placeholder="Enter description"></textarea>
-                            @if ($errors->has('description'))
+                            <textarea class="col-md-40" name="deskripsi_organization" value="{{ old('deskripsi_organization') }}" required autofocus id="deskripsi_organization" placeholder="Enter deskripsi_organization"></textarea>
+                            @if ($errors->has('deskripsi_organization'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
+                                        <strong>{{ $errors->first('deskripsi_organization') }}</strong>
                                     </span>
                             @endif
                         </div>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name_user') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Nama</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name_user" value="{{ old('name_user') }}">
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('name_user'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('name_user') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email_user') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Alamat E-Mail</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control" name="email_user" value="{{ old('email_user') }}">
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('email_user'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('email_user') }}</strong>
                                     </span>
                                 @endif
                             </div>
