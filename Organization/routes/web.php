@@ -25,3 +25,4 @@ Route::get('/register', function () {
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
