@@ -56,6 +56,14 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
+    public function login(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        if($request->has('email_user')){
+           
+        }
+        return $user;
+    }
     
 
 
