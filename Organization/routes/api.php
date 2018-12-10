@@ -69,3 +69,18 @@ Route::delete('user/{id}', 'UserController@delete');
 Route::get('userGetInfo/{id}', 'UserController@userGetInfo');
 Route::get('getKabinet/{id}', 'OrganizationController@getKabinet');
 Route::get('getDivisi/{id}', 'CabinetController@getDivisi');
+
+Route::post('login', function (Request $request) {
+    
+    if (auth()->attempt(['email_user' => $request->input('email'), 'password' => $request->input('password')])) {
+        // Authentication passed...
+        $user = auth()->user();
+        $user->save();
+        return $user;
+    }
+    
+    return response()->json([
+        'error' => 'Unauthenticated user',
+        'code' => 401,
+    ], 401);
+});

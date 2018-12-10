@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hash;
 
 class User extends Authenticatable
 {
@@ -25,8 +26,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+         'remember_token',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+	    $this->attributes['password'] = Hash::make($value); 
+    }
 
     public function Role()
     {

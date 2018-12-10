@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Hash;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {       
         return User::create($request->all());
     }
 
@@ -56,14 +57,7 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
-    public function login(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
-        if($request->has('email_user')){
-           
-        }
-        return $user;
-    }
+   
     
 
 
