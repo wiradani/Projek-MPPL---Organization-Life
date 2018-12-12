@@ -84,3 +84,5 @@ Route::post('login', function (Request $request) {
         'code' => 401,
     ], 401);
 });
+
+Route::post('joinEvent', 'UserController@joinEvent');

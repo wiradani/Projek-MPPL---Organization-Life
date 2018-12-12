@@ -57,7 +57,30 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
-   
+    public function joinEvent(Request $request)
+    {
+        $user_id = $request->input('id_user');
+        $event_id = $request->input('id_event');
+        DB::table('user_event')->insert(
+            ['user_id' => $user_id, 'event_id' => $event_id]
+        );
+        $user_point = DB::table('users')
+        ->select('users.jumlah_point') ->where('users.id', '=', $user_id)
+        ->value('users.jumlah_point');
+
+        $event_point = DB::table('events')
+        ->select('events.points_reward') ->where('events.id_event', '=', $event_id)
+        ->value('events.points_reward');
+
+        $new_point = $user_point + $event_point;
+
+        DB::table('users')
+        ->where('users.id', '=', $user_id)
+        ->update( ['jumlah_point' => $new_point]);
+
+
+        return response()->json("Joined event", 200);
+    }
     
 
 

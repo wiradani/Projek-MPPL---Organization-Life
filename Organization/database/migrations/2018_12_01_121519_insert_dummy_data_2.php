@@ -17,8 +17,8 @@ class InsertDummyData2 extends Migration
             'id_event'=>1,
             'nama_event' => "test 1",
             'deskripsi_event' => 'hanya test saja',
-            'date start' => DB::raw('now()'),
-            'date finish'=> DB::raw('now()'),
+            'time_start' => DB::raw('now()'),
+            'time_finish'=> DB::raw('now()'),
             'points_reward'=>10
          ]);
 
@@ -26,8 +26,8 @@ class InsertDummyData2 extends Migration
             'id_event'=>2,
             'nama_event' => "test 2",
             'deskripsi_event' => 'hanya test saja lagi',
-            'date start' => DB::raw('now()'),
-            'date finish'=> DB::raw('now()'),
+            'time_start' => DB::raw('now()'),
+            'time_finish'=> DB::raw('now()'),
             'points_reward'=>15
          ]);
 
@@ -35,8 +35,8 @@ class InsertDummyData2 extends Migration
             'id_event'=>3,
             'nama_event' => "test 3",
             'deskripsi_event' => 'hanya test saja lagi dan lagi',
-            'date start' => DB::raw('now()'),
-            'date finish'=> DB::raw('now()'),
+            'time_start' => DB::raw('now()'),
+            'time_finish'=> DB::raw('now()'),
             'points_reward'=>20
          ]);
     }
