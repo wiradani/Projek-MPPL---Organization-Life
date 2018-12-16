@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 
- 
+header('Access-Control-Allow-Origin: *');
+header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 /*
 |--------------------------------------------------------------------------
 | API Routes
