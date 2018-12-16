@@ -14,8 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/css/app.css">
 
 </head>
-@yield('content')
-{{-- <body class="hold-transition sidebar-mini">
+
+<body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -144,14 +144,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="../images/OL_logo.svg" alt="OrganizationLIFE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">OrganizationLIFE</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      {{-- <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -205,9 +205,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.sidebar -->
   </aside>
 
+  
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
+    @yield('content')
+
+    {{-- <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -310,15 +315,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-</div>
-<!-- ./wrapper --> --}}
+  </footer> --}}
 
+</div>
+<!-- ./wrapper --> 
+
+</body>
 <!-- REQUIRED SCRIPTS -->
 
 <!-- AdminLTE App -->
 <script src="js/app.js"></script>
-</body>
 </html>
 
 

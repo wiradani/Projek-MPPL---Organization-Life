@@ -15,43 +15,43 @@
 
             {{-- EMAIL INPUT --}}
             <div class="input-group {{ $errors->has('email') ? 'has-error' : '' }} mb-3">
-            <input name="email" value = "{{ old('email') }}" type="email" class="form-control" placeholder="Email">
-            @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
-            <div class="input-group-append">
-                <span class="fa fa-envelope input-group-text"></span>
-            </div>
+                <input name="email" value = "{{ old('email') }}" type="email" class="form-control" placeholder="Email">
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+                <div class="input-group-append">
+                    <span class="fa fa-envelope input-group-text"></span>
+                </div>
             </div>
 
             {{-- PASSWORD INPUT --}}
             <div class="input-group {{ $errors->has('password') ? 'has-error' : '' }} mb-3">
-            <input name="password" value = "{{ old('password') }}" type="password" class="form-control" placeholder="Password">
-            @if ($errors->has('password'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
-            <div class="input-group-append">
-                <span class="fa fa-lock input-group-text"></span>
-            </div>
+                <input name="password" value = "{{ old('password') }}" type="password" class="form-control" placeholder="Password">
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+                <div class="input-group-append">
+                    <span class="fa fa-lock input-group-text"></span>
+                </div>
             </div>
 
             <div class="row">
-            <div class="col-8">
-                <div class="checkbox icheck">
-                <label>
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                </label>
+                <div class="col-8">
+                    <div class="checkbox icheck">
+                    <label>
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                    </label>
+                    </div>
                 </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
-            </div>
-            <!-- /.col -->
+                <!-- /.col -->
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+                </div>
+                <!-- /.col -->
             </div>
         </form>
 
