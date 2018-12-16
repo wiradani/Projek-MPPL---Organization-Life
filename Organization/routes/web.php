@@ -27,3 +27,5 @@ Route::get('/register', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
+
+Route::view('/tambahEvent', 'partials.formEvent');

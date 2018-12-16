@@ -8,12 +8,14 @@ use Auth;
 class WelcomeController extends Controller
 {
     public function index()
-    {
-    	if (Auth::check()){
-    		return view('welcome');
-    	} else{
-    		return view('login');
-    	}
+    {	
+		return view('welcome');
+
+		// if (Auth::check()){
+    	// 	return view('welcome');
+    	// } else{
+    	// 	return view('login');
+    	// }
     }
     //
 }
