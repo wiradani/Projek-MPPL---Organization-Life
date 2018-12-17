@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-
+header('Access-Control-Allow-Origin: *');
+header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 /*
 |--------------------------------------------------------------------------
 | Console Routes
