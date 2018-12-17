@@ -2,7 +2,7 @@
 
 @section('content')
           <!-- Content Wrapper. Contains page content -->
-          <div class="content-wrapper">
+          {{-- <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
               <div class="container-fluid">
@@ -107,7 +107,7 @@
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
           </footer>
-        </div>
+        </div> --}}
         <!-- ./wrapper -->>
 @endsection
 
