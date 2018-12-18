@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('content')
 
 <div class="content-header">
@@ -26,17 +27,40 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form">
+                    <form action="{{ route('create_event') }}" method="POST">
+                      {!! csrf_field() !!}
                       <div class="card-body">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                          <label for="exampleInputEmail1">Nama Event</label>
+                          <input name="nama_event" value = "{{ old('nama_event') }}" type="text" class="form-control" placeholder="Nama Event">
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="exampleInputEmail1">Deskripsi Event</label>
+                          <input name="deskripsi_event" value = "{{ old('deskripsi_event') }}" type="text" class="form-control" placeholder="Deskripsi Event">
+                        </div>
+                       <div class="form-group">
+                          <label for="exampleInputEmail1">Waktu Mulai</label>
+                          <input class="date form-control" name="time_start" value = "{{ old('time_start') }}" type="datetime" placeholder="Waktu mulai">
+                          <script type="text/javascript">
+                            $('.date').datepicker({  
+                               format: 'yyyy-mm-dd'
+                             });  
+                          </script>  
                         </div>
                         <div class="form-group">
+                          <label for="exampleInputEmail1">Waktu Selesai</label>
+                          <input class="date form-control" name="time_finish" value = "{{ old('time_finish') }}" type="datetime" placeholder="Waktu Selesai">
+                          <script type="text/javascript">
+                            $('.date').datepicker({  
+                               format: 'yyyy-mm-dd'
+                             });  
+                          </script>  
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Poin Reward</label>
+                          <input name="points_reward" value = "{{ old('points_reward') }}" type="text" class="form-control" placeholder="Banyaknya reward">
+                        </div>
+                        <!--<div class="form-group">
                           <label for="exampleInputFile">File input</label>
                           <div class="input-group">
                             <div class="custom-file">
@@ -52,7 +76,7 @@
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
-                      </div>
+                      </div> -->
                       <!-- /.card-body -->
       
                       <div class="card-footer">
