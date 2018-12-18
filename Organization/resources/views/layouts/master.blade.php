@@ -53,7 +53,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           {{-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> --}}
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ \Auth::user()->name_user }}</a>
+          <a href="#" class="d-block">
+            @if (\Auth::check())
+              {{\Auth::user()->name_user }}
+            @endif
+          </a>
         </div>
       </div>
 
@@ -73,6 +77,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="/tambahEvent" class="nav-link">
                   <i class="nav-icon fas fa-calendar-plus"></i>
                   <p>Tambah Event</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/tambahKabinet" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-plus"></i>
+                  <p>Tambah Kabinet</p>
                 </a>
               </li>
               <li class="nav-item">
