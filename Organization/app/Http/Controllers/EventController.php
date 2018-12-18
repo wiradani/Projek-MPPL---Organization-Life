@@ -9,9 +9,10 @@ class EventController extends Controller
 {
     public function index()
     {
-        $event = DB::table('events')->get();
+        return Event::all();
+        //$event = DB::table('events')->get();
         //dd($event);
-        return view('partials.tabelEvent',compact('event'));
+        //return view('partials.tabelEvent',compact('event'));
     }
  
     public function show($id)
