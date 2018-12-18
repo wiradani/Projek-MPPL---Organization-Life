@@ -82,6 +82,19 @@ class UserController extends Controller
         return response()->json("Joined event", 200);
     }
     
-
+    public function login(Request $request) {
+    
+        if (auth()->attempt(['email_user' => $request->input('email'), 'password' => $request->input('password')])) {
+            // Authentication passed...
+            $user = auth()->user();
+            $user->save();
+            return $user;
+        }
+        
+        return response()->json([
+            'error' => 'Unauthenticated user',
+            'code' => 401,
+        ], 401);
+    }
 
 }

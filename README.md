@@ -9,13 +9,32 @@ $ organization
 ```
 ### Installation Admin LTE
 
-1. Require the package using composer:
+1. Install NPM Dependencies :
+
+    ```
+    npm install
+    ```
+    
+2. Install AdminLTE v3.0.0-alpha.2 via NPM :
+
+   ```
+   npm install admin-lte@v3.0.0-alpha.2 --save
+   ```
+
+3. Install FontAwesome 5 via NPM :
+
+    ```
+    npm install @fortawesome/fontawesome-free
+    ```
+
+
+4. Require the package using composer:
 
     ```
     composer require jeroennoten/laravel-adminlte
     ```
 
-2. Add the service provider to the `providers` in `config/app.php`:
+5. Add the service provider to the `providers` in `config/app.php`:
 
     > Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider
 
@@ -23,7 +42,7 @@ $ organization
     php JeroenNoten\LaravelAdminLte\ServiceProvider::class,
     ```
 
-3. Publish the public assets:
+6. Publish the public assets:
 
     ```
     php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets

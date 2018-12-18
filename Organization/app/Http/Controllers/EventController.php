@@ -41,4 +41,14 @@ class EventController extends Controller
 
         return 204;
     }
+
+    public function userEventHistory(Request $request, $id){
+        $user = DB::table('users')
+            ->join('user_event', 'users.id', '=', 'user_event.user_id')
+            ->join('events', 'user_event.event_id', '=', 'events.id_event')
+            ->select('users.id','events.id_event','events.nama_event','events.deskripsi_event')
+            ->where('users.id', '=', $id)
+            ->get();
+        return response()->json($user, 200);
+    }
 }

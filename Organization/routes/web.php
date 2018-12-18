@@ -14,7 +14,7 @@ header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 Route::auth();
 Route::resource('/', 'WelcomeController');
 Route::resource('/kabinet', 'ListKabinet');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 Route::get('/login', function () {
     return view('login');
 })->name('login');
