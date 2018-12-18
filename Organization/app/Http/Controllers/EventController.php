@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
-
+use DB;
 class EventController extends Controller
 {
     public function index()
     {
-        return Event::all();
+        $event = DB::table('events')->get();
+        //dd($event);
+        return view('partials.tabelEvent',compact('event'));
     }
  
     public function show($id)
@@ -19,7 +21,9 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        return Event::create($request->all());
+        //dd($request);
+        Event::create($request->all());
+        return redirect('/tambahEvent');
     }
 
     public function update(Request $request, $id)

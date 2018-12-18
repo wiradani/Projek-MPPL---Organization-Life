@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class LoginController extends Controller
@@ -22,12 +23,15 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    public function logout(Request $request) {
+      Auth::logout();
+      return redirect('/login');
+    }
     public function login(Request $request)
     {
 
         $email_user = $request->all()['email'];
         $password = $request->all()['password'];
-
         if (Auth::attempt(['email_user' => $email_user, 'password' => $password])) {
             // Authentication passed...
             return redirect()->intended($this->redirectPath());

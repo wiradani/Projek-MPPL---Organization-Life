@@ -14,11 +14,12 @@ header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 Route::auth();
 Route::resource('/', 'WelcomeController');
 Route::resource('/kabinet', 'ListKabinet');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 Route::get('/register', 'Auth\RegisterController@register');
-Route::post('/register', 'Auth\RegisterController@register');
+Route::post('/register', 'Auth\RegisterController@create')->name('register');
 Route::get('/register', function () {
     return view('register');
 });
@@ -28,5 +29,6 @@ Route::get('/register', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
 
-Route::view('/tambahEvent', 'partials.formEvent');
-Route::view('/tabelEvent', 'partials.tableEvent');
+Route::view('/tambahEvent', 'partials.formEvent')->name('tambahEvent');
+Route::post('/tambahEvent', 'EventController@store')->name('create_event');
+Route::get('/tabelEvent', 'EventController@index')->name('tabelEvent');
