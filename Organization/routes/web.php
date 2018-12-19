@@ -30,5 +30,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
 
 Route::view('/tambahEvent', 'partials.formEvent')->name('tambahEvent');
-Route::post('/tambahEvent', 'EventController@store')->name('create_event');
 Route::get('/tabelEvent', 'EventController@index')->name('tabelEvent');
+Route::post('/tambahEvent', 'EventController@store')->name('create_event');
+Route::get('/viewEvent', 'EventController@view')->name('event.view');
