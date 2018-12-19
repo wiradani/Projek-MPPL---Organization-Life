@@ -74,3 +74,5 @@ Route::get('getDivisi/{id}', array('middleware' => 'cors', 'uses' => 'CabinetCon
 Route::post('login', array('middleware' => 'cors', 'uses' => 'UserController@login'));
 Route::post('joinEvent', array('middleware' => 'cors', 'uses' => 'UserController@joinEvent'));
 Route::get('userEventHistory/{id}', array('middleware' => 'cors', 'uses' => 'EventController@userEventHistory'));
+Route::get('userRewardHistory/{id}', array('middleware' => 'cors', 'uses' => 'RewardController@userRewardHistory'));
+Route::post('reedemReward', array('middleware' => 'cors', 'uses' => 'RewardController@reedemReward'));
