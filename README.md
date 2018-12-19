@@ -7,6 +7,16 @@ create new blank database check .env file
 ```
 $ organization
 ```
+
+### Installation Table list
+Install the package with composer :
+   ```
+    composer require okipa/laravel-bootstrap-table-list:^2.0
+   ```
+if Service Provider still not installed , try :
+   ```
+    composer dump-autoload
+   ```
 ### Installation Admin LTE
 
 1. Install NPM Dependencies :
