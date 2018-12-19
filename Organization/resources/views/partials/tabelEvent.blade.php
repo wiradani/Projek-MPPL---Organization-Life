@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}"> 
+</head>
 @extends('layouts.master')
 
 @section('content')
-    
+ 
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -14,39 +23,8 @@
 <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
-    <div class="container-fluid">
+{{$table}}
 
-    <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Striped Full Width Table</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body p-0">
-      <table class="table table-striped">
-        <tr>
-          <th style="width: 10px">#</th>
-          <th>Nama Event</th>
-          <th>Deskripsi Event</th>
-          <th style="width: 40px">Label</th>
-        </tr>
-        @foreach($event as $e)
-        <tr>
-          <td>1.</td>
-          <td>{{$e->nama_event}}</td>
-          <td>{{$e->deskripsi_event}}</td>
-        </tr>
-        @endforeach
-      </table>
-    </div>
-    <!-- /.card-body -->
-
-</div><!-- /.container-fluid -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-</div>
-<!-- ./wrapper -->
 
 @endsection
+</html>

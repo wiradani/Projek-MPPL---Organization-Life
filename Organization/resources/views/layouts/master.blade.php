@@ -51,7 +51,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="image">
           <img src="../images/man.svg" class="img-circle elevation-2" alt="User Image"></div>
         <div class="info">
-          <a href="#" class="d-block">{{ \Auth::user()->name_user }}</a>
+          <a href="#" class="d-block">
+            @if (\Auth::check())
+              {{\Auth::user()->name_user }}
+            @endif
+          </a>
         </div>
       </div>
 
@@ -70,9 +74,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/tambahKabinet" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-plus"></i>
+                  <p>Tambah Kabinet</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/tabelEvent" class="nav-link">
                   <i class="nav-icon fas fa-calendar-week"></i>
                   <p>Tabel Event</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('event.view')}}" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-week"></i>
+                  <p>View Event</p>
                 </a>
               </li>
             </ul>
