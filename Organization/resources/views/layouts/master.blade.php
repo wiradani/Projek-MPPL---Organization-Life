@@ -49,9 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../images/man.svg" class="img-circle elevation-2" alt="User Image">
-          {{-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> --}}
-        </div>
+          <img src="../images/man.svg" class="img-circle elevation-2" alt="User Image"></div>
         <div class="info">
           <a href="#" class="d-block">
             @if (\Auth::check())
@@ -66,10 +64,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
-
-          <li class="nav-item has-treeview menu-open">
 
           <li class="nav-item has-treeview menu-open">
             <ul class="nav nav-treeview">
