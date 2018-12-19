@@ -16,6 +16,10 @@ class Organization extends Model
     {
         return $this->HasMany('App\Cabinet');
     }
+    public function Events()
+    {
+        return $this->HasMany('App\Event');
+    }
     public function users()
     {
         return $this->belongsTo('App\User');

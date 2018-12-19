@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Organization;
 use DB;
+use Auth;
 use Okipa\TableList;
 class EventController extends Controller
 {
@@ -82,7 +84,14 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        Event::create($request->all());
+        Organization::find($request->organization_id_organization)->events()->create([
+            'nama_event' => $request->nama_event,
+            'deskripsi_event' => $request->deskripsi_event,
+            'time_start'=> $request->time_start,
+            'time_finish'=> $request->time_finish,
+            'tempat' => $request->tempat,
+            'points_reward' => $request->points_reward,
+            ]);
         return redirect('/tambahEvent');
     }
 
@@ -92,6 +101,12 @@ class EventController extends Controller
         $event->update($request->all());
 
         return $event;
+    }
+
+    public function view_tambah()
+    {
+        $organization = Auth::user()->organizations()->get();
+        return view('partials.formEvent',compact('organization'));
     }
 
     public function delete(Request $request, $id)

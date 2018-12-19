@@ -9,11 +9,15 @@ class Event extends Model
     protected $primaryKey = 'id_event';
 
     protected $fillable = [
-        'id_event', 'nama_event', 'deskripsi_event','time_start','time_finish','points_reward','created_at','updated_at'
+        'id_event', 'nama_event', 'deskripsi_event','time_start','time_finish','points_reward','created_at','updated_at','tempat','status'
     ];
 
     public function users()
     {
         return $this->belongsToMany('App\User');
+    }
+    public function organizations()
+    {
+        return $this->belongsTo('App\Organization');
     }
 }

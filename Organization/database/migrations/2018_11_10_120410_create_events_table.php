@@ -17,10 +17,14 @@ class CreateEventsTable extends Migration
             $table->increments('id_event');
             $table->string('nama_event');
             $table->text('deskripsi_event');
+            $table->unsignedInteger('organization_id_organization')->default(0);
             $table->dateTime('time_start');
             $table->dateTime('time_finish');
             $table->smallInteger('points_reward');
             $table->timestamps();
+        });
+        Schema::table('events', function (Blueprint $table) {
+            $table->foreign('organization_id_organization')->references('id_organization')->on('organizations');    
         });
     }
 

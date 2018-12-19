@@ -15,7 +15,7 @@ class AddCollumnEventTable extends Migration
     {
         Schema::table('events', function($table) {
             $table->text('tempat');
-            $table->text('status');
+            $table->char('status',100)->default("pending");
         });
     }
 

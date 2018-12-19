@@ -30,6 +30,20 @@
                     <form action="{{ route('create_event') }}" method="POST">
                       {!! csrf_field() !!}
                       <div class="card-body">
+                        <div class="form-group {{ $errors->has('designation') ? ' has-error' : '' }}">
+                            <label for="exampleInputEmail1">Nama Organisasi</label>
+                            <select id="organization_id_organization" name="organization_id_organization" class="form-control">
+                                <option value="">--- Select organizations ---</option>
+                                @foreach ($organization as $key => $value)
+                                    <option value="{{ $value->id_organization }}" {{ old('organization') == $key ? 'selected' : ''}}>{{ $value->nama_organization }}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('organization'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('organization') }}</strong>
+                                </span>
+                            @endif
+                        </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Nama Event</label>
                           <input name="nama_event" value = "{{ old('nama_event') }}" type="text" class="form-control" placeholder="Nama Event">
@@ -59,6 +73,10 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">Poin Reward</label>
                           <input name="points_reward" value = "{{ old('points_reward') }}" type="text" class="form-control" placeholder="Banyaknya reward">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Tempat</label>
+                          <input name="tempat" value = "{{ old('tempat') }}" type="text" class="form-control" placeholder="Tempat">
                         </div>
                         <!--<div class="form-group">
                           <label for="exampleInputFile">File input</label>
