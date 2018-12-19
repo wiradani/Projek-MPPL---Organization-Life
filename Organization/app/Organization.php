@@ -9,11 +9,15 @@ class Organization extends Model
     protected $primaryKey = 'id_organization';
     
     protected $fillable = [
-        'id_organization', 'nama_organization', 'deskripsi_organization','created_at','updated_at'
+        'id_organization', 'nama_organization', 'deskripsi_organization','created_at','updated_at','user_id'
     ];
 
-    public function Cabinet()
+    public function Cabinets()
     {
-        return $this->belongsToMany(Cabinet::class);
+        return $this->HasMany('App\Cabinet');
+    }
+    public function users()
+    {
+        return $this->belongsTo('App\User');
     }
 }

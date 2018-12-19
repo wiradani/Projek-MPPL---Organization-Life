@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('nim_user');
-            $table->integer('jumlah_point')->unsigned();
-            $table->Integer('role_id')->unsigned();
-            $table->Integer('divisi_id')->unsigned();
-            $table->Integer('kontak_id')->unsigned();
+            $table->integer('jumlah_point')->unsigned()->nullable();
+            $table->Integer('role_id')->unsigned()->nullable();
+            $table->Integer('divisi_id')->unsigned()->nullable();
+            $table->Integer('kontak_id')->unsigned()->nullable();
           
             $table->rememberToken();
             $table->timestamps();

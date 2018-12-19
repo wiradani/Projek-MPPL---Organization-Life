@@ -14,11 +14,15 @@ class CreateCabinetsTable extends Migration
     public function up()
     {
         Schema::create('cabinets', function (Blueprint $table) {
-            $table->increments('id_cabinet');
+            $table->increments('id_cabinet')->nullable();
             $table->string('nama_cabinet');
             $table->text('deskripsi_cabinet');
             $table->text('periode_cabinet');
+            $table->unsignedInteger('organization_id_organization')->default(0);
             $table->timestamps();
+        });
+        Schema::table('cabinets', function (Blueprint $table) {
+            $table->foreign('organization_id_organization')->references('id_organization')->on('organizations');    
         });
     }
 

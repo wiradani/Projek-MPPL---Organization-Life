@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Organization;
+use Auth;
 
 class OrganizationController extends Controller
 {
@@ -20,7 +21,12 @@ class OrganizationController extends Controller
 
     public function store(Request $request)
     {
-        return Organization::create($request->all());
+        //dd($request);
+        Auth::user()->organizations()->create([
+            'nama_organization'=>$request->nama_organization,
+            'deskripsi_organization'=>$request->deskripsi_organization
+        ]);
+        return redirect('/tambahOrganisasi');
     }
 
     public function update(Request $request, $id)

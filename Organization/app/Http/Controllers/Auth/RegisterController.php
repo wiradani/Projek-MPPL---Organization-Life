@@ -67,14 +67,11 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         //wedd($request);
-        Organization::create([
-            'nama_organization' => $request['nama_organization'],
-            'deskripsi_organization' => $request['deskripsi_organization'],
-        ]);
         User::create([
             'name_user' => $request['name_user'],
             'email_user' => $request['email_user'],
             'password' => $request['password'],
+            'nim_user' => $request['nim_user'],
         ]);
 
         return view('login');

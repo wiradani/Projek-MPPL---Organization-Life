@@ -74,6 +74,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item has-treeview menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/tambahOrganisasi" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-plus"></i>
+                  <p>Tambah Organisasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/tambahEvent" class="nav-link">
                   <i class="nav-icon fas fa-calendar-plus"></i>
                   <p>Tambah Event</p>

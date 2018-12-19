@@ -32,4 +32,9 @@ Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.k
 Route::view('/tambahEvent', 'partials.formEvent')->name('tambahEvent');
 Route::get('/tabelEvent', 'EventController@index')->name('tabelEvent');
 Route::post('/tambahEvent', 'EventController@store')->name('create_event');
+Route::get('/tambahKabinet', 'CabinetController@view')->name('tambahKabinet');
+Route::post('/tambahKabinet', 'CabinetController@store')->name('create_kabinet');
 Route::get('/viewEvent', 'EventController@view')->name('event.view');
+
+Route::view('/tambahOrganisasi', 'partials.tambahOrganisasi')->name('tambahOrganisasi');
+Route::post('/tambahOrganisasi', 'OrganizationController@store')->name('create_organisasi');

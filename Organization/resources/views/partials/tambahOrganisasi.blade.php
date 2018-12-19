@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Create Cabinet</h1>
+            <h1 class="m-0 text-dark">Create Organisasi</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -23,38 +23,24 @@
                   <!-- general form elements -->
                   <div class="card card-primary">
                     <div class="card-header">
-                      <h3 class="card-title">Tambah Kabinet</h3>
+                      <h3 class="card-title">Tambah Organisasi</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('create_kabinet') }}" method="POST">
+                    <form action="{{ route('create_organisasi') }}" method="POST">
                       {!! csrf_field() !!}
                       <div class="card-body">
-                        <div class="form-group {{ $errors->has('designation') ? ' has-error' : '' }}">
-                            <label for="exampleInputEmail1">Nama Organisasi</label>
-                            <select id="organization_id_organization" name="organization_id_organization" class="form-control">
-                                <option value="">--- Select organizations ---</option>
-                                @foreach ($organization as $key => $value)
-                                    <option value="{{ $value->id_organization }}" {{ old('organization') == $key ? 'selected' : ''}}>{{ $value->nama_organization }}</option>
-                                @endforeach
-                            </select>
-                            @if ($errors->has('organization'))
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Nama Organisasi</label>
+                          <input name="nama_organization" value = "{{ old('nama_organization') }}" type="text" class="form-control" placeholder="Nama Organisasi">
+                        </div>
+                        <div class="form-group {{ $errors->has('deskripsi_organization') ? 'has-error' : '' }}">
+                            <textarea name="deskripsi_organization" value = "{{ old('deskripsi_organization') }}" class="form-control" rows="3" placeholder="Deskripsi Organisasi"></textarea>
+                            @if ($errors->has('deskripsi_organization'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('organization') }}</strong>
+                                    <strong>{{ $errors->first('deskripsi_organization') }}</strong>
                                 </span>
                             @endif
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Kabinet</label>
-                          <input name="nama_cabinet" value = "{{ old('nama_cabinet') }}" type="text" class="form-control" placeholder="Nama Kabinet">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Deskripsi Kabinet</label>
-                          <input name="deskripsi_cabinet" value = "{{ old('deskripsi_cabinet') }}" type="text" class="form-control" placeholder="Deskripsi Kabinet">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Periode Kabinet</label>
-                          <input name="periode_cabinet" value = "{{ old('periode_cabinet') }}" type="text" class="form-control" placeholder="Periode Kabinet">
                         </div>
                         <!--<div class="form-group">
                           <label for="exampleInputFile">File input</label>

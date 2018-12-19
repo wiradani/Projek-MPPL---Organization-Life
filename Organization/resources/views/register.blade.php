@@ -14,7 +14,7 @@
           <form action="{{ route('register') }}" method="POST">
             {!! csrf_field() !!}
 
-            {{-- NAMA ORGANISASI INPUT --}}
+            {{-- NAMA ORGANISASI INPUT 
             <div class="input-group {{ $errors->has('nama_organization') ? 'has-error' : '' }} mb-3">
               <input name="nama_organization" value = "{{ old('nama_organization') }}" type="text" class="form-control" placeholder="Nama Organisasi">
                 @if ($errors->has('nama_organization'))
@@ -25,9 +25,9 @@
               <div class="input-group-append">
                   <span class="fa fa-user input-group-text"></span>
               </div>
-            </div>
+            </div> --}}
 
-            {{-- DESKRIPSI ORGANISASI TEXTAREA --}}
+            {{-- DESKRIPSI ORGANISASI TEXTAREA 
             <div class="form-group {{ $errors->has('deskripsi_organization') ? 'has-error' : '' }}">
                 <textarea name="deskripsi_organization" value = "{{ old('deskripsi_organization') }}" class="form-control" rows="3" placeholder="Deskripsi Organisasi"></textarea>
                 @if ($errors->has('deskripsi_organization'))
@@ -35,7 +35,7 @@
                         <strong>{{ $errors->first('deskripsi_organization') }}</strong>
                     </span>
                 @endif
-            </div>
+            </div> --}}
 
             {{-- NAMA KETUA ORGANISASI INPUT --}}
             <div class="input-group {{ $errors->has('name_user') ? 'has-error' : '' }} mb-3">
@@ -62,6 +62,19 @@
                 <div class="input-group-append">
                     <span class="fa fa-envelope input-group-text"></span>
                 </div>
+            </div>
+
+            {{-- NIM KETUA ORGANISASI INPUT --}}
+            <div class="input-group {{ $errors->has('nim_user') ? 'has-error' : '' }} mb-3">
+              <input name="nim_user" value = "{{ old('nim_user') }}" type="text" class="form-control" placeholder="NIM Ketua">
+                @if ($errors->has('nim_user'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('nim_user') }}</strong>
+                    </span>
+                @endif
+              <div class="input-group-append">
+                  <span class="fa fa-user input-group-text"></span>
+              </div>
             </div>
 
             {{-- PASSWORD INPUT --}}

@@ -33,7 +33,10 @@ class User extends Authenticatable
     {
 	    $this->attributes['password'] = Hash::make($value); 
     }
-
+    public function organizations()
+    {
+        return $this->hasMany('App\Organization'); 
+    }
     public function Role()
     {
         return $this->belongsToMany(Role::class);
