@@ -38,3 +38,6 @@ Route::get('/viewEvent', 'EventController@view')->name('event.view');
 
 Route::view('/tambahOrganisasi', 'partials.tambahOrganisasi')->name('tambahOrganisasi');
 Route::post('/tambahOrganisasi', 'OrganizationController@store')->name('create_organisasi');
+
+Route::get('/tambahDivisi', 'DivisionController@view_tambah')->name('tambahDivisi');
+Route::post('/tambahDivisi', 'DivisionController@store')->name('create_division');

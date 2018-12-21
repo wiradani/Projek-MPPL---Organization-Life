@@ -14,13 +14,12 @@ class CreateDivisionsTable extends Migration
     public function up()
     {
         Schema::create('divisions', function (Blueprint $table) {
-            $table->increments('id_division');
+            $table->increments('id_division')->nullable();
             $table->string('nama_division');
             $table->text('deskripsi_division');
-            $table->integer('cabinet_id')->unsigned();
+            $table->integer('cabinet_id_cabinet')->unsigned();
             $table->timestamps();
-
-            $table->foreign('cabinet_id')->references('id_cabinet')->on('cabinets')->onDelete('cascade');
+            $table->foreign('cabinet_id_cabinet')->references('id_cabinet')->on('cabinets')->onDelete('cascade');
             
         });
     }

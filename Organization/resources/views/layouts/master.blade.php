@@ -86,6 +86,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/tambahDivisi" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-plus"></i>
+                  <p>Tambah Divisi</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/tabelEvent" class="nav-link">
                   <i class="nav-icon fas fa-calendar-week"></i>
                   <p>Tabel Event</p>

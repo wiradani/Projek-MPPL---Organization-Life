@@ -17,8 +17,8 @@ class Cabinet extends Model
         return $this->belongsTo('App\Organization');
     }
 
-    public function Divisi()
+    public function Divisions()
     {
-        return $this->hasMany('App\Divisi','id_cabinet');
+        return $this->hasMany('App\Division');
     }
 }
