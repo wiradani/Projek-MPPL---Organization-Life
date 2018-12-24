@@ -20,7 +20,11 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "@fortawesome/fontawesome": "^1.1.8",
         "@fortawesome/fontawesome-free": "^5.6.1",
+        "@fortawesome/fontawesome-free-brands": "^5.0.13",
+        "@fortawesome/fontawesome-free-regular": "^5.0.13",
+        "@fortawesome/fontawesome-free-solid": "^5.0.13",
         "admin-lte": "^3.0.0-alpha.2"
     }
 }
