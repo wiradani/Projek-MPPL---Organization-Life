@@ -41,7 +41,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <a href="{{ url('/') }}" class="brand-link">
       <img src="../images/OL_logo.svg" alt="OrganizationLIFE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">OrganizationLIFE</span>
     </a>
 
     <!-- Sidebar -->
