@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 use DB;
-use Illuminate\Http\Request;
 use App\Organization;
 use Auth;
 
@@ -39,6 +40,7 @@ class OrganizationController extends Controller
 
     public function delete(Request $request, $id)
     {
+        dd($request);
         $organization = Organization::findOrFail($id);
         $organization->delete();
 

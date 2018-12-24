@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a606b5ec2464399efbc7010a0b1a21f",
+    "content-hash": "c3daf6f497c4589e74a4aab76a54a790",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1524,16 +1524,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.5.2",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542"
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/01809cc1e17a5af275913c49bb5d444eb6cc06d4",
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4",
                 "shasum": ""
             },
             "require": {
@@ -1568,7 +1568,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2018-11-14T14:12:22+00:00"
+            "time": "2018-12-17T10:47:50+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -1623,25 +1623,27 @@
         },
         {
             "name": "okipa/laravel-bootstrap-table-list",
-            "version": "2.0.0",
+            "version": "2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Okipa/laravel-bootstrap-table-list.git",
-                "reference": "eb3a2d30c2b52ddf2527222ca298d6cb7817f363"
+                "reference": "4a340b159f244a4cc736731cabe5f44ff8f342a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Okipa/laravel-bootstrap-table-list/zipball/eb3a2d30c2b52ddf2527222ca298d6cb7817f363",
-                "reference": "eb3a2d30c2b52ddf2527222ca298d6cb7817f363",
+                "url": "https://api.github.com/repos/Okipa/laravel-bootstrap-table-list/zipball/4a340b159f244a4cc736731cabe5f44ff8f342a3",
+                "reference": "4a340b159f244a4cc736731cabe5f44ff8f342a3",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5.0",
                 "okipa/laravel-html-helper": "^1.0",
-                "php": ">=7.0"
+                "php": ">=7.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.6"
+                "mockery/mockery": "^1.2",
+                "orchestra/testbench": "^3.6",
+                "squizlabs/php_codesniffer": "^3.3"
             },
             "type": "library",
             "extra": {
@@ -1683,7 +1685,7 @@
                 "php",
                 "table"
             ],
-            "time": "2018-06-08T10:14:14+00:00"
+            "time": "2018-11-23T12:53:30+00:00"
         },
         {
             "name": "okipa/laravel-html-helper",
