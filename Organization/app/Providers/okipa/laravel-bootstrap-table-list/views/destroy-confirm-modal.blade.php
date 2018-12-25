@@ -1,4 +1,4 @@
-<div id="destroy-confirm-modal-{{ $entity->id }}"
+<div id="destroy-confirm-modal-{{ $entity->id_event }}"
      {{ classTag('modal', 'fade', config('tablelist.template.modal.container.class')) }}
      tabindex="-1"
      role="dialog"
@@ -8,7 +8,7 @@
          role="document">
         <div class="modal-content">
             <div {{ classTag('modal-header', config('tablelist.template.modal.title.container.class')) }}>
-                <h5 id="destroy-confirm-modal-label-{{ $entity->id }}"
+                <h5 id="destroy-confirm-modal-label-{{ $entity->id_event }}"
                     {{ classTag('modal-title', config('tablelist.template.modal.title.item.class')) }}>
                     {!! config('tablelist.template.modal.title.item.icon') !!}
                     {{ trans('tablelist::tablelist.modal.title') }}

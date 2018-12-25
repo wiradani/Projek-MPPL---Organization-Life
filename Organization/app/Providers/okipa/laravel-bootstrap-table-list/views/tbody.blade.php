@@ -89,10 +89,10 @@
                         {{-- edit button --}}
                         @if($table->isRouteDefined('edit'))
                             @if(! $entity->disabled)
-                                <form {{ classTag('edit-' . $entity->id, config('tablelist.template.table.tbody.edit.container.class')) }}
+                                <form {{ classTag('edit-' . $entity->id_event, config('tablelist.template.table.tbody.edit.container.class')) }}
                                       role="form"
                                       method="GET"
-                                      action="{{ $table->getRoute('edit', ['id' => $entity->id]) }}">
+                                      action="{{ $table->getRoute('edit', ['id' => $entity->id_event]) }}">
                                     @endif
                                     <button type="submit"
                                             {{ classTag(config('tablelist.template.table.tbody.edit.item.class'), $entity->disabled ? 'disabled' : null) }}
@@ -107,10 +107,10 @@
                         {{-- destroy button --}}
                         @if($table->isRouteDefined('destroy'))
                             @if(! $entity->disabled)
-                                <form {{ classTag('destroy-' . $entity->id, config('tablelist.template.table.tbody.destroy.container.class')) }}
+                                <form {{ classTag('destroy-' . $entity->id_event, config('tablelist.template.table.tbody.destroy.container.class')) }}
                                       role="form"
                                       method="POST"
-                                      action="{{ $table->getRoute('destroy', ['id' => $entity->id]) }}">
+                                      action="{{ $table->getRoute('destroy', ['id' => $entity->id_event]) }}">
                                     {!! csrf_field() !!}
                                     <input type="hidden" name="_method" value="DELETE">
                                     @endif
@@ -119,7 +119,7 @@
                                             title="{{ trans('tablelist::tablelist.tbody.action.destroy') }}"
                                             @if(config('tablelist.template.table.tbody.destroy.trigger-bootstrap-modal'))
                                             data-toggle="modal"
-                                            data-target="#destroy-confirm-modal-{{ $entity->id }}"
+                                            data-target="#destroy-confirm-modal-{{ $entity->id_event }}"
                                             @endif
                                             @if($entity->disabled)disabled="disabled" @endif>
                                         {!! config('tablelist.template.table.tbody.destroy.item.icon') !!}

@@ -28,7 +28,7 @@ class EventController extends Controller
         // set the route that will be targetted when the create / edit / delete button will be hit.
         ->setRoutes([
             'index'      => ['alias' => 'event.view', 'parameters' => []],
-            'destroy'    => ['alias' => 'event.delete', 'parameters' => ['id']],
+            'destroy'    => ['alias' => 'event.delete', 'parameters' => []],
             'create'     => ['alias' => 'create_event', 'parameters' => []],
         ])
         ->addQueryInstructions(function($query) {
@@ -164,12 +164,12 @@ class EventController extends Controller
             return redirect()->back()->with('message', 'Event sudah dikonfirmasi');
         }
     }
-    public function delete(Request $request, $id)
+    public function delete($id)
     {
+        //dd($id);
         $event = Event::findOrFail($id);
         $event->delete();
-
-        return 204;
+        return redirect()->back()->with('message', 'Event berhasil dihapus'); 
     }
 
     public function userEventHistory(Request $request, $id){

@@ -28,7 +28,7 @@ Route::get('/register', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
-Route::delete('/viewEvent/{event}/delete', 'EventController@delete')->name('event.delete');
+Route::delete('/viewEvent/{id}/delete', 'EventController@delete')->name('event.delete');
 Route::get('/tambahEvent', 'EventController@view_tambah')->name('tambahKabinet');
 Route::get('/tabelEvent', 'EventController@index')->name('tabelEvent');
 Route::post('/tambahEvent', 'EventController@store')->name('create_event');
