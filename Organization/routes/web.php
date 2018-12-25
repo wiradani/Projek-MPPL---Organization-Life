@@ -29,11 +29,11 @@ Route::get('/register', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::delete('/kabinet/{kabinet}/delete', 'ListKabinet@delete')->name('delete.kabinet');
 Route::delete('/viewEvent/{event}/delete', 'EventController@delete')->name('event.delete');
-Route::delete('/viewEvent/{event}/edit', 'EventController@update')->name('event.edit');
-
 Route::get('/tambahEvent', 'EventController@view_tambah')->name('tambahKabinet');
 Route::get('/tabelEvent', 'EventController@index')->name('tabelEvent');
 Route::post('/tambahEvent', 'EventController@store')->name('create_event');
+Route::get('/viewEvent/{id}', 'EventController@edit')->name('edit_status');
+Route::post('/confirmation/{id}', 'EventController@edit_update')->name('edit_status_update');
 Route::get('/tambahKabinet', 'CabinetController@view')->name('tambahKabinet');
 Route::post('/tambahKabinet', 'CabinetController@store')->name('create_kabinet');
 Route::get('/viewEvent', 'EventController@view')->name('event.view');

@@ -21,6 +21,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- /.content-header -->
 
 <!-- Main content -->
+
+@if(session()->has('message'))
+    @if (session()->get('message')== "Event sudah dikonfirmasi")
+    <div class="alert alert-danger">
+        {{ session()->get('message') }}
+    </div>
+    @else
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    @endif
+@endif
 {{$table}}
 
 

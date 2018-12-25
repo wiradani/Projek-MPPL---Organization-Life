@@ -40,7 +40,6 @@ class OrganizationController extends Controller
 
     public function delete(Request $request, $id)
     {
-        dd($request);
         $organization = Organization::findOrFail($id);
         $organization->delete();
 

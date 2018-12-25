@@ -28,8 +28,8 @@ class EventController extends Controller
         // set the route that will be targetted when the create / edit / delete button will be hit.
         ->setRoutes([
             'index'      => ['alias' => 'event.view', 'parameters' => []],
-            'edit'    => ['alias' => 'event.edit', 'parameters' => []],
             'destroy'    => ['alias' => 'event.delete', 'parameters' => ['id']],
+            'create'     => ['alias' => 'create_event', 'parameters' => []],
         ])
         ->addQueryInstructions(function($query) {
             $query->select('events.*');
@@ -39,13 +39,20 @@ class EventController extends Controller
         // set the default number of rows to show in your table list.
         ->setRowsNumber(50)
         // show the rows number selector that will enable you to choose the number of rows to show.
-        ->enableRowsNumberSelector();
+        ->enableRowsNumberSelector()
         // add some query instructions for the special use cases
         // display some lines as disabled
         // you can now join some columns to your tablelist.
         // display the news image from a custom HTML element.
         // display the news title that is contained in the news table and use this field in the destroy confirmation modal.
         // this field will also be searchable in the search field.
+        ->disableLines(function($model){
+            return $model->id === 1 || $model->id === 2;
+        }, ['disabled', 'bg-secondary'])
+        // display some line as highlighted
+        ->highlightLines(function($model){
+            return $model->id === 3;
+        }, ['highlighted', 'bg-success']);
         $table->addColumn('id_event')
             ->setTitle('Id event')
             ->isSortable()
@@ -95,6 +102,9 @@ class EventController extends Controller
             ->setTitle('Status penerimaan')
             ->isSortable()
             ->isButton(['btn', 'btn-sm', 'btn-outline-primary'])
+            ->isLink(function($entity, $column){
+                return route('edit_status', ['id' => $entity->id_event]);
+            })
             ->isSearchable();
         
         return view('partials.tabelEvent',compact('table'));
@@ -116,7 +126,7 @@ class EventController extends Controller
             'tempat' => $request->tempat,
             'points_reward' => $request->points_reward,
             ]);
-        return redirect('/tambahEvent');
+        return redirect('/viewEvent');
     }
 
     public function update(Request $request, $id)
@@ -132,7 +142,28 @@ class EventController extends Controller
         $organization = Auth::user()->organizations()->get();
         return view('partials.formEvent',compact('organization'));
     }
-
+    public function edit($id)
+    {
+        $object = Event::find($id);
+        if ($object->status == "pending"){
+            $event = Event::find($id);
+            return view('partials.confirmation',['id'=>$id]);
+        }  else{
+            return redirect()->back()->with('message', 'Event sudah dikonfirmasi');
+        }
+    }
+    public function edit_update(Request $request,$id)
+    {
+        //dd($request);
+        $object = Event::find($id);
+        if ($object->status == "pending"){
+            $event = Event::find($id)->update(['status'=>$request->status]);
+            return redirect('/viewEvent')->with('message', 'Event berhasil dikonfirmasi');
+        }  else{
+            //dd($request);
+            return redirect()->back()->with('message', 'Event sudah dikonfirmasi');
+        }
+    }
     public function delete(Request $request, $id)
     {
         $event = Event::findOrFail($id);
