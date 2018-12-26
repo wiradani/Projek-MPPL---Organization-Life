@@ -41,7 +41,11 @@ Route::get('/viewEvent', 'EventController@view')->name('event.view');
 Route::view('/tambahOrganisasi', 'partials.tambahOrganisasi')->name('tambahOrganisasi');
 Route::post('/tambahOrganisasi', 'OrganizationController@store')->name('create_organisasi');
 
-Route::get('/tambahDivisi', 'DivisionController@view_tambah')->name('tambahDivisi');
-Route::post('/tambahDivisi', 'DivisionController@store')->name('create_division');
+Route::get('/tambahReward', 'RewardController@tambah_view_reward')->name('tambahReward');
+Route::post('/tambahReward', 'RewardController@create')->name('create_reward');
 
 Route::get('/viewUserEvent', 'EventController@view_user_event')->name('event_user.view');
+
+
+Route::get('/tambahDivisi', 'DivisionController@view_tambah')->name('tambahDivisi');
+Route::post('/tambahDivisi', 'DivisionController@store')->name('create_division');

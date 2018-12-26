@@ -7,13 +7,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Create Organisasi</h1>
+            <h1 class="m-0 text-dark">Create Reward</h1>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
 @if(session()->has('message'))
+    
     <div class="alert alert-success">
         {{ session()->get('message') }}
     </div>
@@ -27,44 +28,35 @@
                   <!-- general form elements -->
                   <div class="card card-primary">
                     <div class="card-header">
-                      <h3 class="card-title">Tambah Organisasi</h3>
+                      <h3 class="card-title">Tambah Reward</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('create_organisasi') }}" method="POST">
+                    <form action="{{ route('create_reward') }}" method="POST">
                       {!! csrf_field() !!}
                       <div class="card-body">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama Organisasi</label>
-                          <input name="nama_organization" value = "{{ old('nama_organization') }}" type="text" class="form-control" placeholder="Nama Organisasi">
+                          <label for="exampleInputEmail1">Nama Reward</label>
+                          <input name="nama_reward" value = "{{ old('nama_reward') }}" type="text" class="form-control" placeholder="Nama Reward">
                         </div>
-                        <div class="form-group {{ $errors->has('deskripsi_organization') ? 'has-error' : '' }}">
-                            <textarea name="deskripsi_organization" value = "{{ old('deskripsi_organization') }}" class="form-control" rows="3" placeholder="Deskripsi Organisasi"></textarea>
+                        <div class="form-group {{ $errors->has('deskripsi_reward') ? 'has-error' : '' }}">
+                        <label for="exampleInputEmail1">Deskripsi Reward</label>
+                            <textarea name="deskripsi_reward" value = "{{ old('deskripsi_reward') }}" class="form-control" rows="3" placeholder="Deskripsi Reward"></textarea>
                             @if ($errors->has('deskripsi_organization'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('deskripsi_organization') }}</strong>
                                 </span>
                             @endif
                         </div>
-                        <!--<div class="form-group">
-                          <label for="exampleInputFile">File input</label>
-                          <div class="input-group">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="exampleInputFile">
-                              <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                              <span class="input-group-text" id="">Upload</span>
-                            </div>
-                          </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Poin Reward</label>
+                          <input name="points_reward" value = "{{ old('points_reward') }}" type="text" class="form-control" placeholder="Poin Reward">
                         </div>
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Kuantitas Reward</label>
+                          <input name="quantity_reward" value = "{{ old('quantity_reward') }}" type="text" class="form-control" placeholder="Kuantitas Reward">
                         </div>
-                      </div> -->
-                      <!-- /.card-body -->
-      
+                        
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </div>

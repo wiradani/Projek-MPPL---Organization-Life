@@ -12,6 +12,11 @@
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
 <!-- /.content-header -->
 
     <!-- Main content -->

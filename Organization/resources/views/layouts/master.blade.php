@@ -97,6 +97,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('tambahReward')}}" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-week"></i>
+                  <p>Tambah Reward</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('event.view')}}" class="nav-link">
                   <i class="nav-icon fas fa-calendar-week"></i>
                   <p>View Event</p>

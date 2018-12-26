@@ -35,7 +35,7 @@ class DivisionController extends Controller
             'nama_division' => $request->nama_division,
             'deskripsi_division' => $request->deskripsi_division,
             ]);
-        return redirect('/tambahDivisi');
+        return redirect('/tambahDivisi')->with('message', 'Divisi berhasil dikonfirmasi');;
     }
 
     public function update(Request $request, $id)

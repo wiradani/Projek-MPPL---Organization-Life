@@ -34,7 +34,7 @@ class CabinetController extends Controller
             'deskripsi_cabinet' => $request->deskripsi_cabinet,
             'periode_cabinet'=> $request->periode_cabinet
             ]);
-        return redirect('/tambahKabinet');
+        return redirect('/tambahKabinet')->with('message', 'Kabinet berhasil ditambahkan');;
     }
     public function view()
     {

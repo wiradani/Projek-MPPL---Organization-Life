@@ -13,7 +13,11 @@
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
-
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
     <!-- Main content -->
     <section class="content">
             <div class="container-fluid">

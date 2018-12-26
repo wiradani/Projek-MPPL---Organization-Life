@@ -32,7 +32,7 @@ class OrganizationController extends Controller
             'nama_organization'=>$request->nama_organization,
             'deskripsi_organization'=>$request->deskripsi_organization
         ]);
-        return redirect('/tambahOrganisasi');
+        return redirect('/tambahOrganisasi')->with('message', 'Organisasi berhasil ditambahkan');;
     }
 
     public function update(Request $request, $id)

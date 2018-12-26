@@ -80,4 +80,18 @@ class RewardController extends Controller
             return response()->json("Point anda tidak mencukupi", 500);
         }
     }
+    public function create(Request $request)
+    {
+        //dd($request);
+        
+        foreach ($request->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+          }
+        Reward::create($request->all());
+        return redirect('/tambahReward')->with('message', 'Reward berhasil ditambahkan');
+    }
+    public function tambah_view_reward()
+    {
+        return view('partials.reward');
+    }
 }
