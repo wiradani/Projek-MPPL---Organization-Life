@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Reward;
-
+use Auth;
 
 class RewardController extends Controller
 {
@@ -92,6 +92,7 @@ class RewardController extends Controller
     }
     public function tambah_view_reward()
     {
+        if (!Auth::check()) return view('/login');
         return view('partials.reward');
     }
 }

@@ -12,6 +12,24 @@ header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 |
 */
 Route::auth();
+Route::group(array('before' => 'auth'), function() 
+{
+    Route::get('user/logout', array(
+        'uses' => 'UserController@doLogout',
+    ));
+
+    Route::get('/', function() {
+        return Redirect::to('dashboard');
+    });
+
+    Route::get('dashboard',  array(
+        'uses' => 'DashboardController@showIndex',
+    ));
+
+    // More Routes
+
+});
+
 Route::resource('/', 'WelcomeController');
 Route::resource('/kabinet', 'ListKabinet');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
@@ -38,7 +56,7 @@ Route::get('/tambahKabinet', 'CabinetController@view')->name('tambahKabinet');
 Route::post('/tambahKabinet', 'CabinetController@store')->name('create_kabinet');
 Route::get('/viewEvent', 'EventController@view')->name('event.view');
 
-Route::view('/tambahOrganisasi', 'partials.tambahOrganisasi')->name('tambahOrganisasi');
+Route::get('/tambahOrganisasi', 'OrganizationController@view')->name('tambahOrganisasi');
 Route::post('/tambahOrganisasi', 'OrganizationController@store')->name('create_organisasi');
 
 Route::get('/tambahReward', 'RewardController@tambah_view_reward')->name('tambahReward');

@@ -38,6 +38,7 @@ class CabinetController extends Controller
     }
     public function view()
     {
+        if (!Auth::check()) return view('/login');
         //Cabinet::create($request->all());
         $organization = Auth::user()->organizations()->get();
         //dd($organization);

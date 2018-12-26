@@ -19,6 +19,7 @@ class DivisionController extends Controller
     }
     public function view_tambah()
     {
+        if (!Auth::check()) return view('/login');
         $cabinet = Auth::user()->organizations()->find(1)->cabinets()->get();
        // dd($cabinet);
         return view('partials.tambahDivisi',compact('cabinet'));

@@ -32,7 +32,7 @@ class OrganizationController extends Controller
             'nama_organization'=>$request->nama_organization,
             'deskripsi_organization'=>$request->deskripsi_organization
         ]);
-        return redirect('/tambahOrganisasi')->with('message', 'Organisasi berhasil ditambahkan');;
+        return redirect('/tambahOrganisasi')->with('message', 'Organisasi berhasil ditambahkan');
     }
 
     public function update(Request $request, $id)
@@ -59,6 +59,11 @@ class OrganizationController extends Controller
             ->select('organizations.id_organization','organizations.nama_organization', 'cabinets.id_cabinet','cabinets.nama_cabinet','cabinets.deskripsi_cabinet')
             ->get();
         return response()->json($organization, 200);
+    }
+    public function view()
+    {
+        if (!Auth::check()) return view('/login');
+        return view('partials.tambahOrganisasi');
     }
 }
 

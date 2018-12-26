@@ -20,6 +20,7 @@ class EventController extends Controller
     }
      public function view()
     {
+        if (!Auth::check()) return view('/login');
         //$event = DB::table('events')->get();
         
         //dd($event);
@@ -112,6 +113,7 @@ class EventController extends Controller
     }
     public function view_user_event()
     {
+        if (!Auth::check()) return view('/login');
         //$event = DB::table('events')->get();
         
         //dd($event);
@@ -189,6 +191,7 @@ class EventController extends Controller
 
     public function view_tambah()
     {
+        if (!Auth::check()) return view('/login');
         $organization = Auth::user()->organizations()->get();
         return view('partials.formEvent',compact('organization'));
     }
