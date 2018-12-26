@@ -1,7 +1,10 @@
-# Projek-MPPL---admin-LTE
+# Organization Life User Manual
+
 Projek matakuliah MPPL
  Sistem untuk membantu kegiatan sehari hari ormawa di IPB
 Front end web dan API menggunakan framework laravel
+
+## Installasi Admin (web)
 
 create new blank database check .env file
 ```
@@ -19,12 +22,6 @@ if Service Provider still not installed , try :
    ```
 ### Installation Admin LTE
 
-1. Install NPM Dependencies :
-
-    ```
-    npm install
-    ```
-    
 2. Install AdminLTE v3.0.0-alpha.2 via NPM :
 
    ```
@@ -85,3 +82,43 @@ $ http://127.0.0.1:8000/
 ```
 $ php artisan route:list
 ```
+
+## Installasi User (mobile)
+
+Lakukan installasi admin terlebih dahulu.
+
+### Jalankan Aplikasinya :
+1. Pindah ke direktori aplikasi
+```
+$ cd organization
+```
+
+2. Install NPM Dependencies :
+```
+npm install
+```
+    
+
+2. install composer to folder backend
+```
+$ composer install
+```
+3. setup .env file
+
+4. migrate the database
+```
+$ php artisan migrate
+```
+5. run the laravel
+```
+$ php artisan serve
+```
+6. open this url in your browser
+```
+$ http://127.0.0.1:8000/
+```
+7. View all api routes
+```
+$ php artisan route:list
+```
+
