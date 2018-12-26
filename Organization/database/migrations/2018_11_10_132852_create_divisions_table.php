@@ -15,11 +15,11 @@ class CreateDivisionsTable extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->increments('id_division')->nullable();
-            $table->string('nama_division');
-            $table->text('deskripsi_division');
-            $table->integer('cabinet_id_cabinet')->unsigned();
+            $table->string('nama_division')->nullable();
+            $table->text('deskripsi_division')->nullable();
+            $table->integer('cabinet_id_cabinet')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('cabinet_id_cabinet')->references('id_cabinet')->on('cabinets')->onDelete('cascade');
+            $table->foreign('cabinet_id_cabinet')->references('id_cabinet')->on('cabinets')->onDelete('cascade')->nullable();
             
         });
     }

@@ -14,12 +14,12 @@ class CreateUserEventTable extends Migration
     public function up()
     {
         Schema::create('user_event', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('event_id')->unsigned();
+            $table->increments('id')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('event_id')->unsigned()->nullable();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('event_id')->references('id_event')->on('events')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
+            $table->foreign('event_id')->references('id_event')->on('events')->onDelete('cascade')->nullable();
         });
     }
 

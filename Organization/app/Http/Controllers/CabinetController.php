@@ -24,6 +24,11 @@ class CabinetController extends Controller
         //dd($request);
         //Cabinet::create($request->all());
         //$organization = Auth::user()->organizations()->get();
+        foreach ($request->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+          }
+          
+          $request->validate($valids);
         Organization::find($request->organization_id_organization)->cabinets()->create([
             'nama_cabinet' => $request->nama_cabinet,
             'deskripsi_cabinet' => $request->deskripsi_cabinet,

@@ -26,6 +26,11 @@ class DivisionController extends Controller
  
     public function store(Request $request)
     {
+        foreach ($request->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+          }
+          
+        $request->validate($valids);
         Cabinet::find($request->cabinet_id_cabinet)->divisions()->create([
             'nama_division' => $request->nama_division,
             'deskripsi_division' => $request->deskripsi_division,

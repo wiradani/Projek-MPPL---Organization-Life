@@ -14,12 +14,12 @@ class CreateCanometOrganizationTable extends Migration
     public function up()
     {
         Schema::create('cabinet_organization', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('organization_id')->unsigned();
-            $table->integer('cabinet_id')->unsigned();
+            $table->increments('id')->nullable();
+            $table->integer('organization_id')->unsigned()->nullable();
+            $table->integer('cabinet_id')->unsigned()->nullable();
 
-            $table->foreign('organization_id')->references('id_organization')->on('organizations')->onDelete('cascade');
-            $table->foreign('cabinet_id')->references('id_cabinet')->on('cabinets')->onDelete('cascade');
+            $table->foreign('organization_id')->references('id_organization')->on('organizations')->onDelete('cascade')->nullable();
+            $table->foreign('cabinet_id')->references('id_cabinet')->on('cabinets')->onDelete('cascade')->nullable();
         });
     }
 

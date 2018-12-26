@@ -15,9 +15,9 @@ class CreateCabinetsTable extends Migration
     {
         Schema::create('cabinets', function (Blueprint $table) {
             $table->increments('id_cabinet')->nullable();
-            $table->string('nama_cabinet');
-            $table->text('deskripsi_cabinet');
-            $table->text('periode_cabinet');
+            $table->string('nama_cabinet')->nullable();
+            $table->text('deskripsi_cabinet')->nullable();
+            $table->text('periode_cabinet')->nullable();
             $table->unsignedInteger('organization_id_organization')->default(0);
             $table->timestamps();
         });

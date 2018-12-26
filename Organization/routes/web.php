@@ -43,3 +43,5 @@ Route::post('/tambahOrganisasi', 'OrganizationController@store')->name('create_o
 
 Route::get('/tambahDivisi', 'DivisionController@view_tambah')->name('tambahDivisi');
 Route::post('/tambahDivisi', 'DivisionController@store')->name('create_division');
+
+Route::get('/viewUserEvent', 'EventController@view_user_event')->name('event_user.view');

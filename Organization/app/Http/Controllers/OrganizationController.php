@@ -23,6 +23,11 @@ class OrganizationController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        foreach ($request->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+          }
+          
+        $request->validate($valids);
         Auth::user()->organizations()->create([
             'nama_organization'=>$request->nama_organization,
             'deskripsi_organization'=>$request->deskripsi_organization

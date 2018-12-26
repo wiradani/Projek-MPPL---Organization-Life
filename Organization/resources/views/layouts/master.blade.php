@@ -102,6 +102,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Event</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('event_user.view')}}" class="nav-link">
+                  <i class="nav-icon fas fa-calendar-week"></i>
+                  <p>View User Event</p>
+                </a>
+              </li>
             </ul>
           </li>
 

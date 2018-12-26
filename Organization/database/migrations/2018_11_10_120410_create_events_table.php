@@ -14,13 +14,13 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('id_event');
-            $table->string('nama_event');
-            $table->text('deskripsi_event');
+            $table->increments('id_event')->nullable();
+            $table->string('nama_event')->nullable();
+            $table->text('deskripsi_event')->nullable();
             $table->unsignedInteger('organization_id_organization')->default(0);
-            $table->dateTime('time_start');
-            $table->dateTime('time_finish');
-            $table->smallInteger('points_reward');
+            $table->dateTime('time_start')->nullable();
+            $table->dateTime('time_finish')->nullable();
+            $table->smallInteger('points_reward')->nullable();
             $table->timestamps();
         });
         Schema::table('events', function (Blueprint $table) {
