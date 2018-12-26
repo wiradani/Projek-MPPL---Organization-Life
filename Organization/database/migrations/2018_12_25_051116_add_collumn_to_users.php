@@ -14,8 +14,8 @@ class AddCollumnToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('organization_id');
-            $table->integer('cabinet_id');
+            $table->integer('organization_id')->nullable();
+            $table->integer('cabinet_id')->nullable();
         });
     }
 
