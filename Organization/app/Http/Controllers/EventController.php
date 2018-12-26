@@ -120,7 +120,7 @@ class EventController extends Controller
         ->setModel(UserEvent::class)
         // set the route that will be targetted when the create / edit / delete button will be hit.
         ->setRoutes([
-            'index'      => ['alias' => 'event.view', 'parameters' => []],
+            'index'      => ['alias' => 'event_user.view', 'parameters' => []],
         ])
         ->addQueryInstructions(function($query) {
             $query->select('user_event.*');
@@ -151,7 +151,7 @@ class EventController extends Controller
             ->isSortable()
             ->isSearchable();
         // display a value from a sql alias
-        // in this case, you will target the `users` table and the `author` field, and make this sortable and searchable.
+        // in this case, you will target tphphe `users` table and the `author` field, and make this sortable and searchable.
         // this way, you tell the tablelist to manipulate the `name` attribute in the sql queries but to display the aliased `author` model attribute.
         return view('partials.UserEvent',compact('table'));
     }
