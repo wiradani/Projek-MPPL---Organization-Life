@@ -12,5 +12,4 @@ class UserEvent extends Model
         'id', 'organization_id', 'cabinet_id'
     ];
 
-    
 }
